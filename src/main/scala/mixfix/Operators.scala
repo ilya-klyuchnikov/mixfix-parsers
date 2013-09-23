@@ -95,10 +95,10 @@ trait Operators { self: StdTokenParsers =>
     lazy val concreteOperators = allOperators filter { op =>
       op.nameParts forall { n => n.isInstanceOf[ExactName] || n.isInstanceOf[ExactKeyword] }
     }
-    lazy val concreteNames = concreteOperators flatMap (_.nameParts) collect { nm => nm match {
+    lazy val concreteNames = concreteOperators flatMap (_.nameParts) collect {
       case ExactName(name) => name
       case ExactKeyword(name) => name
-    }}
+    }
   }
 
 }

@@ -3,7 +3,7 @@ package mixfix
 trait MixFixDSL { self: Operators =>
   def isKeyword(s: String): Boolean 
 
-  /** TODO this __ thing is a lazy hack, create a better DSL! */
+  /* TODO: this __ thing is a lazy hack, create a better DSL! */
   implicit def namePart2closedMaker(left: NamePart) = new ClosedMaker(left)
   class ClosedMaker(left: NamePart) {
     def __(right: NamePart) = Operator(Closed, List(left, right))

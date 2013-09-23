@@ -91,7 +91,7 @@ object ExpressionParser extends StdTokenParsers with MixFixParsers with MixFixDS
   }
 
   def main(args: Array[String]) {
-    val input = "val x := -2 * 2 ^ -4 + 7 + 5 + 6 - 17 < 6 = - 14 < 3 + 5"
+    val input = "-2 * 2 ^ -4 + 7 + 5 + 6 - 17 < 6 = - 14 < 3 + 5"
     val tokens = new lexical.Scanner(input)
     val res = phrase(expr)(tokens)
     println(res)
